@@ -73,6 +73,9 @@ export default function Home({
       </section>
 
       <section className="mt-16 pb-16 container px-5 lg:px-0 lg:mx-auto">
+        <div className="mb-3 text-base font-medium">
+          Showing {data.length} job{data.length > 1 ? "s" : ""}
+        </div>
         <div className=" bg-slate-100">
           <div className=" bg-black px-5 lg:px-16 py-10 text-slate-300">
             <div className="text-3xl font-semibold">We are HireChain</div>
