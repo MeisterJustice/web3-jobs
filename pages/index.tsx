@@ -1,10 +1,14 @@
-import Image from "next/image";
 import { Fragment, useState } from "react";
 
 export interface IData {
   title: string;
   company: string;
 }
+
+const baseUrl =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://web3-jobs-vbqv.vercel.app";
 
 export default function Home({
   error,
@@ -112,7 +116,7 @@ export async function getServerSideProps() {
   let error = "";
 
   try {
-    const response = await fetch("http://localhost:3000/api/jobs");
+    const response = await fetch(`${baseUrl}/api/jobs`);
     const data = await response.json();
     jobs = data;
   } catch (err: any) {
