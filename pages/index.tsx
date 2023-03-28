@@ -23,9 +23,7 @@ export default function Home({
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    const response = await fetch(
-      `http://localhost:3000/api/jobs?title=${search}`
-    );
+    const response = await fetch(`${baseUrl}/api/jobs?title=${search}`);
     const data = await response.json();
     setData(data);
   };
@@ -35,7 +33,7 @@ export default function Home({
       setSearch(value);
     } else {
       setSearch(value);
-      const response = await fetch(`http://localhost:3000/api/jobs`);
+      const response = await fetch(`${baseUrl}/api/jobs`);
       const data = await response.json();
       setData(data);
     }
