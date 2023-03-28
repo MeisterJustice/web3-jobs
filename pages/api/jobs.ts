@@ -16,6 +16,7 @@ export default async function handler(
   let err: PostgrestError | null;
 
   if (req.query.title) {
+    // if user inputs a search query
     const { data, error } = await supabase
       .from("jobs")
       .select("title, company")
