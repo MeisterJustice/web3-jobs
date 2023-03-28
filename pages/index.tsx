@@ -25,6 +25,7 @@ export default function Home({
 
     const response = await fetch(`${baseUrl}/api/jobs?title=${search}`);
     const data = await response.json();
+
     setData(data);
   };
 
@@ -35,6 +36,7 @@ export default function Home({
       setSearch(value);
       const response = await fetch(`${baseUrl}/api/jobs`);
       const data = await response.json();
+
       setData(data);
     }
   };
